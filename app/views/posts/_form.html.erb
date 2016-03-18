@@ -1,0 +1,44 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+
+
+
+    </div>
+  <% end %>
+
+        <div class="field">
+          <%= f.label :category_id %>
+          <%= f.collection_select :category_id, Category.all, :id, :name %>
+        </div>
+
+        <label for = "post_title"> Title:</label>
+        <input type = "string" name ="post[title]" id="post_title"/>
+
+        <label for = "post_description"> Description:</label>
+        <input type = "text" name ="post[description]" id="post_description"/>
+
+        <label for = "post_image"> Image URL:</label>
+        <input type = "string" name ="post[image_url]" id="post_image_url"/>
+
+        <label for = "post_user"> User name:</label>
+        <input type = "string" name ="post[user]" id="post_user"/>
+
+        <label for = "post_email"> Email:</label>
+        <input type = "string" name ="post[email]" id="post_email"/>
+
+        <label for = "post_phone"> Phone:</label>
+        <input type = "string" name ="post[phone]" id="post_phone"/>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
