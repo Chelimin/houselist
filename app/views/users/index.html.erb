@@ -1,6 +1,12 @@
 <h1>Users</h1>
 
+
 <% @users.each do |user| %>
+
+<div class="field">
+  <%= user.user_name %>
   <%= user.email %>
   <%= user.password_digest %>
+</div>
+
 <% end %>

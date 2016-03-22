@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new (user_params)
     if @user.save
       # checks that the user has saved
-        redirect_to users_path
+        redirect_to posts_path
       else
         render 'new'
         #vs redirect to blank form where user has to fill in all fields again
