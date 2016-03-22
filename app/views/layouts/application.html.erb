@@ -2,43 +2,61 @@
 <html>
 <head>
 
-  <title>Cat's list</title>
+<title>Cat's list</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+  <div class="navbar-wrapper">
+    <div class="container">
+
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Cat's List</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><%= link_to "HOME", posts_path %></li>
+              <% Category.all.each do |category| %>
+              <li><%= link_to category.name, posts_path(category_id: category.id), category: category.name %></li>
+              <% end %>
+            </ul>
+
+</div>
+</div>
+</nav>
+
+</div>
+</div>
 
 <div class="container">
-
   <% flash.each do |name, message| %>
     <div class="flash-message flash-message-<%= name %>">
       <%= message %>
     </div>
   <% end %>
 
-
   <% if current_user %>
       <h1>Hello, <%= current_user.user_name %></h1>
       <%= link_to 'Logout', logout_path, method: 'delete', data:{confirm: 'Are you sure?'} %>
   <% else %>
-      <%= link_to 'Login', login_path %>
-      <%= link_to 'Register', new_user_path %>
+      <button class="btn-default btn"><%= link_to 'Login', login_path %></button>
+      <button class="btn-default btn"><%= link_to 'Register', new_user_path %></button>
   <% end %>
 
-
-  <li><%= link_to "HOME", posts_path %></li>
-  <% Category.all.each do |category| %>
-  <li><%= link_to category.name, posts_path(category_id: category.id), category: category.name %></li>
-
-<% end %>
-
-
-
-  <%= yield %>
-
+<%= yield %>
 </div>
 
-
+</div>
 </body>
+
 </html>
