@@ -1,4 +1,4 @@
-<%= form_for(@post) do |f| %>
+<%= form_for @post, url: posts_path, html: { multipart: true } do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -19,23 +19,31 @@
           <%= f.collection_select :category_id, Category.all, :id, :name %>
         </div>
 
-        <label for = "post_title"> Title:</label>
-        <input type = "string" name ="post[title]" id="post_title"/>
+        <div class="field">
+          <%= f.label :title %><br>
+          <%= f.text_field :title %>
+        </div>
 
-        <label for = "post_description"> Description:</label>
-        <input type = "text" name ="post[description]" id="post_description"/>
+        <div class="field">
+          <%= f.label :description %><br>
+          <%= f.text_field :description %>
+        </div>
 
-        <label for = "post_image"> Image URL:</label>
-        <input type = "string" name ="post[image_url]" id="post_image_url"/>
+        <div class="field">
+          <%= f.label :image %><br>
+          <%= f.file_field :image %>
+        </div>
 
-        <label for = "post_user"> User name:</label>
-        <input type = "string" name ="post[user]" id="post_user"/>
 
-        <label for = "post_email"> Email:</label>
-        <input type = "string" name ="post[email]" id="post_email"/>
+        <div class="field">
+          <%= f.label :email %><br>
+          <%= f.text_field :email %>
+        </div>
 
-        <label for = "post_phone"> Phone:</label>
-        <input type = "string" name ="post[phone]" id="post_phone"/>
+        <div class="field">
+          <%= f.label :phone %><br>
+          <%= f.text_field :phone %>
+        </div>
 
 
   <div class="actions">

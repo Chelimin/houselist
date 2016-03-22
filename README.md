@@ -1,2 +1,2 @@
 # houselist
-Craigslist for housing 
+Craigslist for housing built on Ruby on Rails

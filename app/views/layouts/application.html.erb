@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PasswordExample</title>
+
+  <title>Cat's list</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<% flash.each do |name, message| %>
-  <div class="flash-message flash-message-<%= name %>">
-    <%= message %>
-  </div>
+<div class="container">
+
+  <% flash.each do |name, message| %>
+    <div class="flash-message flash-message-<%= name %>">
+      <%= message %>
+    </div>
+  <% end %>
+
+
+  <% if current_user %>
+      <h1>Hello, <%= current_user.email %></h1>
+      <%= link_to 'Logout', logout_path, method: 'delete', data:{confirm: 'Are you sure?'} %>
+  <% else %>
+      <%= link_to 'Login', login_path %>
+      <%= link_to 'Register', new_user_path %>
+  <% end %>
+
+
+  <li><%= link_to "All Posts", posts_path %></li>
+  <% Category.all.each do |category| %>
+  <li><%= link_to category.name, posts_path(category_id: category.id), category: category.name %></li>
+
 <% end %>
 
-<% if current_user %>
-    <h1>Hello, <%= current_user.email %></h1>
-    <%= link_to 'Logout', logout_path, method: 'delete', data:{confirm: 'Are you sure?'} %>
-<% else %>
-    <%= link_to 'Please Login', login_path %>
-<% end %>
 
-<%= yield %>
+
+  <%= yield %>
+
+</div>
+
 
 </body>
 </html>
