@@ -36,6 +36,18 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  config.paperclip_defaults = {
+    :storage => :fog,
+    :fog_directory => ENV['aws_bucket'],
+    :fog_credentials => {
+      :provider => 'AWS',
+      :region => 'ap-southeast-1',
+      :scheme => 'http',
+      :aws_access_key_id => ENV['aws_key'],
+      :aws_secret_access_key => ENV['aws_secret']
+    }
+  }
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

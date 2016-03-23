@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :restrict_access, only: [:new, :edit, :create, :update, :destroy]
 
+def search
+  @results = Post.search_by_description(params[:description])
+end
   # GET /posts
   # GET /posts.json
   def index
@@ -26,7 +29,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     if @post.user_id != current_user.id && !current_user.admin
-      redirect_to posts_url, notice: 'Only owner can edit post!'
+      redirect_to posts_url, notice: 'Only owner and admin can edit post!'
     end
   end
 
@@ -68,7 +71,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     if @post.user_id != current_user.id && !current_user.admin
-      redirect_to posts_url, notice: 'Only owner can edit post!'
+      redirect_to posts_url, notice: 'Only owner and admin can edit post!'
     else
     @post.destroy
     respond_to do |format|

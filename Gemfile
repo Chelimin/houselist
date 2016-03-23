@@ -27,6 +27,18 @@ gem 'simple_form', '~> 3.2.1'
 gem 'haml', '~> 4.0.7'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "paperclip", "~> 4.3"
+gem 'omniauth-facebook', '~> 1.4.1'
+gem 'omniauth', '~> 1.3', '>= 1.3.1'
+gem 'pg_search'
+
+#paperclip
+gem "fog"
+gem "figaro"
+
+#heroku
+gem 'rails_12factor', group: :production
+gem 'puma'
+# ruby "2.2.0"
 
 # Use Unicorn as the app server
 # gem 'unicorn'

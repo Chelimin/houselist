@@ -1,0 +1,27 @@
+<h1 align="center">Search Results for <%= params[:description] %></h1>
+​
+<div class="table-responsive">
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tr>
+    <th>Post</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th>Category</th>
+  </tr>
+  <tbody>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= link_to result.title, '/posts/' + result.id.to_s%></td>
+        <td><%= result.description %></td>
+        <td><%= link_to (image_tag result.image.url(:thumb)) %></td>
+        <td><%= result.category && result.category.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

@@ -23,6 +23,13 @@
    email: "user3@mail.com",
    password: "password",
    password_confirmation: "password",
+ },
+ {
+   user_name: "admin",
+   email: "admin@mail.com",
+   password: "password",
+   password_confirmation: "password",
+   admin: true
  }
 ].each do |user|
  User.create(user)

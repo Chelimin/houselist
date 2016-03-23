@@ -2,13 +2,49 @@
 <html>
 <head>
   <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <title>Cat's list</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 
 <body>
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '205995896433804',
+        xfbml      : true,
+        version    : 'v2.5'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- <div class="nav">
+        <div class="container">
+          <ul class="pull-left">
+            <li><a href="#">Cat's List</a></li>
+          </ul>
+          <ul class="pull-right">
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+
+   -->
+
   <div class="navbar-wrapper">
     <div class="container">
 
@@ -56,9 +92,29 @@
   <% end %>
 
 <%= yield %>
-</div>
+
+
+
+<br>
+<hr class="featurette-divider">
+
+<footer>
+  <p class="pull-right"><a href="#">Back to top</a></p>
+  <p>&copy; 2016 Catslist &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="sitemap.html">Sitemap</a> </p>
+  <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+  </div>
+
+
+</footer>
 
 </div>
+</div>
+
+
 </body>
 
 </html>

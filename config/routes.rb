@@ -1,11 +1,25 @@
 Rails.application.routes.draw do
 
+
+get 'auth/:provider/callback', to: 'sessions#create'
+get 'auth/failure', to: redirect('/')
+get 'signout', to: 'sessions#destroy', as: 'signout'
+
+resources :sessions, only: [:create, :destroy]
+resource :home, only: [:show]
+
+get 'period/create'
+
+get 'period/destroy'
+
+get 'home/show'
+
   resources :categories
-get 'sessions/new'
-
-get 'sessions/create'
-
-get 'sessions/destroy'
+# get 'sessions/new'
+#
+# get 'sessions/create'
+#
+# get 'sessions/destroy'
 
 get 'users/index'
 
@@ -22,12 +36,16 @@ resources :posts
 
   get 'cookies/example_3'
 
-  root "users#index"
+  root "posts#index"
   resources :users, only: [:new, :index, :create]
 
   get 'login', to: 'sessions#new'
   delete 'logout', to: 'sessions#destroy'
   resources :sessions, only: [:new, :create, :destroy]
+
+  get 'search', to: 'posts#search'
+  get 'search_results', to: 'post#search_results'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
