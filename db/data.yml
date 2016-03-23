@@ -1,0 +1,136 @@
+
+---
+users:
+  columns:
+  - id
+  - user_name
+  - email
+  - password_digest
+  - admin
+  - created_at
+  - updated_at
+  records: 
+  - - '25'
+    - User1
+    - user1@mail.com
+    - "$2a$10$Bf1YWY3DMxZLq.PSGHyVv..fAIDcwRQaoeQeLfNDKp.PXB8HXNZry"
+    - false
+    - '2016-03-23 12:46:22.441551'
+    - '2016-03-23 12:46:22.441551'
+  - - '26'
+    - User2
+    - user2@mail.com
+    - "$2a$10$rx55i8/4N6jJp1uqBr2iaux7K41q0DcYaiS/Jl7WpcKL2wbonmPEq"
+    - false
+    - '2016-03-23 12:46:22.535671'
+    - '2016-03-23 12:46:22.535671'
+  - - '27'
+    - User3
+    - user3@mail.com
+    - "$2a$10$d4Wy5PaJekkBpukzWjgdBu7pZx2FWLGCfe0Tqrq8d6J0B7TIvLQ.G"
+    - false
+    - '2016-03-23 12:46:22.633975'
+    - '2016-03-23 12:46:22.633975'
+  - - '28'
+    - admin
+    - admin@mail.com
+    - "$2a$10$TMu3fg4xOgls9uFRP3OyH.9Epabf8V/Yv.3Fh2YesEQxWu4y6lZ2S"
+    - true
+    - '2016-03-23 12:46:22.72247'
+    - '2016-03-23 12:46:22.72247'
+  - - '29'
+    - 
+    - user1@mail.com
+    - "$2a$10$0wi9u3WoNCF0kkS83btsg.SgUpuEjrwQVOavmAPuHkj.zWx.r99tW"
+    - false
+    - '2016-03-23 13:03:49.091591'
+    - '2016-03-23 13:03:49.091591'
+  - - '30'
+    - 
+    - user1@mail.com
+    - "$2a$10$zNntLnudG/gyb6xTFfNYt.cSzRG29/muFug7b.DbrIbjAfOPaeeqK"
+    - false
+    - '2016-03-23 13:11:53.702608'
+    - '2016-03-23 13:11:53.702608'
+
+---
+categories:
+  columns:
+  - id
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - '7'
+    - Housing
+    - '2016-03-23 12:06:09.672847'
+    - '2016-03-23 12:06:09.672847'
+  - - '8'
+    - Jobs
+    - '2016-03-23 12:06:09.677437'
+    - '2016-03-23 12:06:09.677437'
+  - - '9'
+    - For Sale
+    - '2016-03-23 12:06:09.681559'
+    - '2016-03-23 12:06:09.681559'
+
+---
+posts:
+  columns:
+  - id
+  - title
+  - description
+  - image_url
+  - user_id
+  - email
+  - phone
+  - category_id
+  - created_at
+  - updated_at
+  - image_file_name
+  - image_content_type
+  - image_file_size
+  - image_updated_at
+  records: 
+  - - '16'
+    - 'Room for rent '
+    - Orchard Road $2000
+    - 
+    - '26'
+    - user2@mail.com
+    - '123'
+    - '7'
+    - '2016-03-23 13:17:12.209973'
+    - '2016-03-23 13:17:12.209973'
+    - bedroom.jpg
+    - image/jpeg
+    - '264402'
+    - '2016-03-23 13:17:11.211169'
+  - - '17'
+    - Housekeeping
+    - Jurong $20/hour
+    - 
+    - '26'
+    - user2@mail.com
+    - '123'
+    - '8'
+    - '2016-03-23 13:18:04.258388'
+    - '2016-03-23 13:18:04.258388'
+    - kitchen3.jpg
+    - image/jpeg
+    - '576263'
+    - '2016-03-23 13:17:58.881018'
+  - - '18'
+    - 'Furniture for sale '
+    - Living room set for $5000
+    - 
+    - '26'
+    - user2@mail.com
+    - '123'
+    - '9'
+    - '2016-03-23 13:19:15.100013'
+    - '2016-03-23 13:19:15.100013'
+    - livingroom.jpg
+    - image/jpeg
+    - '177003'
+    - '2016-03-23 13:19:14.426992'

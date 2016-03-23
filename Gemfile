@@ -30,6 +30,7 @@ gem "paperclip", "~> 4.3"
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'pg_search'
+gem 'yaml_db'
 
 #paperclip
 gem "fog"

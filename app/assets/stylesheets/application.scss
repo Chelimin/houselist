@@ -17,6 +17,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+  background-color: #89bdd3;
+}
+
+
 .search-bar {
   width: 300px;
   display: inline-block;
@@ -74,17 +79,24 @@
   color: #00b0ff;
 }
 
-.neighborhood-guides {
+.guide {
   background-color: #efefef;
   border-bottom:1px solid #dbdbdb;
 }
 
-.neighborhood-guides h2 {
-  color: #393c3d;
-  font-size: 24px;
+.image {
+  width: 180px;
+  height: 150px;
+  margin: 0 auto;
 }
 
-.neighborhood-guides p {
-  margin-bottom: 13px;
-  font-size: 15px;
+.thumbnail {
+    width: 250px;
+    height: 280px;
+    float: left;
+    display: inline-block;
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
