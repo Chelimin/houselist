@@ -32,8 +32,12 @@
 
   <!-- <div class="nav">
         <div class="container">
+          <a class="navbar-brand" href="#">Cat's List</a>
           <ul class="pull-left">
-            <li><a href="#">Cat's List</a></li>
+            <li><%= link_to "All Posts", posts_path %></li>
+            <% Category.all.each do |category| %>
+            <li><%= link_to category.name, posts_path(category_id: category.id), category: category.name %></li>
+            <% end %>
           </ul>
           <ul class="pull-right">
             <li><a href="#">Sign Up</a></li>
@@ -41,9 +45,8 @@
             <li><a href="#">Help</a></li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
-   -->
 
   <div class="navbar-wrapper">
     <div class="container">
