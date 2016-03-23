@@ -1,12 +1,5 @@
 <button class="btn-default btn"><%= link_to 'New Post', new_post_path %></button>
 
-<div class="search-bar-wrapper">
-<%= form_tag(search_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :description, params[:description], class: 'form-control search-bar', placeholder: "Search Description" %>
-<%= submit_tag "Search", class: 'btn-default btn' %>
-<% end %>
-</div>
-
 <div class="table-responsive">
 <table class="table table-condensed">
   <thead>
@@ -32,4 +25,11 @@
     <% end %>
   </tbody>
 </table>
+
+<%= form_tag(search_path, :method => "get", id: "search-form") do %>
+<div class="search-bar-wrapper">
+<%= text_field_tag :description, params[:description], class: 'form-control search-bar', placeholder: "Search description" %>
+<%= submit_tag "Search", class: 'btn-default btn' %></div>
+<% end %>
+
 </div>

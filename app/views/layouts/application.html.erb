@@ -7,7 +7,6 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
 </head>
 
 <body>
@@ -30,28 +29,10 @@
      }(document, 'script', 'facebook-jssdk'));
   </script>
 
-  <!-- <div class="nav">
-        <div class="container">
-          <a class="navbar-brand" href="#">Cat's List</a>
-          <ul class="pull-left">
-            <li><%= link_to "All Posts", posts_path %></li>
-            <% Category.all.each do |category| %>
-            <li><%= link_to category.name, posts_path(category_id: category.id), category: category.name %></li>
-            <% end %>
-          </ul>
-          <ul class="pull-right">
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-        </div>
-      </div> -->
-
-
   <div class="navbar-wrapper">
     <div class="container">
 
-      <nav class="navbar navbar-default navbar-static-top">
+      <nav class="navbar navbar-static-top">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -60,7 +41,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Cat's List</a>
+            <a class="navbar-brand" href="#">CAT'S LIST</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -96,25 +77,20 @@
 
 <%= yield %>
 
-
-
-<br>
 <hr class="featurette-divider">
 
 <footer>
-  <p class="pull-right"><a href="#">Back to top</a></p>
-  <p>&copy; 2016 Catslist &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="sitemap.html">Sitemap</a> </p>
-  <div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-  </div>
-
-
+<p class="pull-right"><a href="#">Back to top</a></p>
+<p>&copy; 2016 Catslist &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="sitemap.html">Sitemap</a> </p>
+<div
+class="fb-like"
+data-share="true"
+data-width="450"
+data-show-faces="true">
+</div>
 </footer>
 
-</div>
+  </div>
 </div>
 
 
