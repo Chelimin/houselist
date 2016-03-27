@@ -21,7 +21,6 @@ body{
   background-color: #89bdd3;
 }
 
-
 .search-bar {
   width: 300px;
   display: inline-block;
@@ -29,7 +28,8 @@ body{
 }
 
 .search-bar-wrapper {
-  margin: 0 auto;
+  margin-left: 300px;
+  margin-bottom: 30px;
   display: inline-block;
 }
 
@@ -42,41 +42,6 @@ body{
 
 .nav li {
   display: inline;
-}
-
-.jumbotron {
-  height: 500px;
-}
-
-.jumbotron .container {
-  position: relative;
-  top:100px;
-}
-
-.jumbotron h1 {
-  color: #fff;
-  font-size: 48px;
-  font-family: 'Helvetica', sans-serif;
-  font-weight: bold;
-}
-
-.jumbotron p {
-  font-size: 20px;
-  color: #fff;
-}
-
-.learn-more {
-  background-color: #f7f7f7;
-}
-
-.learn-more h3 {
-  font-family: 'Helvetica', sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.learn-more a {
-  color: #00b0ff;
 }
 
 .guide {
@@ -97,6 +62,7 @@ body{
     display: inline-block;
     text-align: center;
     padding: 20px 20px 20px 20px;
+    margin-left: 40px;
     margin-top: 20px;
     margin-bottom: 20px;
 }

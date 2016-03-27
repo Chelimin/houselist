@@ -6,9 +6,9 @@
 <p>Description: <%= @post.description %></p>
 
 <h3>Owner details</h3>
-<p>Email: <%= @post.email %></p>
+<p>Email: <%= mail_to @post.email %></p>
 <p>Phone: <%= @post.phone %></p>
 
-<%= link_to posts_path(@post) do %><i class="fa fa-arrow-circle-left"></i><% end %>
-<%= link_to edit_post_path(@post) do %><i class="fa fa-pencil-square-o"></i><% end %>
-<%= link_to @post, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash"></i><% end %>
+<%= link_to posts_path(@post) do %><i class="fa fa-arrow-circle-left fa-2x"></i><% end %>
+<%= link_to edit_post_path(@post) do %><i class="fa fa-pencil-square-o fa-2x"></i><% end %>
+<%= link_to @post, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-trash fa-2x"></i> <% end %>
